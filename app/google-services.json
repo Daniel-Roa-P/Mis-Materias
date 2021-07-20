@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "139217627135",
+    "project_id": "mismateriasapp-5d774",
+    "storage_bucket": "mismateriasapp-5d774.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139217627135:android:8c3058e2abc4d51f95a9ca",
+        "android_client_info": {
+          "package_name": "mi.aplicacion.MisMaterias"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139217627135-e5lb0f888gcck08lvab9umu6n30k2gfb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoBcSyPKxvJF1U6pwpiYcbmxsO5BcE6Lg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "139217627135-e5lb0f888gcck08lvab9umu6n30k2gfb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
