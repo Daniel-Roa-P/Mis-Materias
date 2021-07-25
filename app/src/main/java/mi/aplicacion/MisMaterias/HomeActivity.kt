@@ -1,13 +1,14 @@
 package mi.aplicacion.MisMaterias
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home.*
 
 enum class ProviderType{
-
-    BASIC
+    BASIC,
+    GOOGLE
 
 }
 
@@ -22,6 +23,11 @@ class HomeActivity : AppCompatActivity() {
 
         setUp(email ?: "", provider ?: "")
 
+        val prefs = getSharedPreferences(getString(R.string.pref_file), Context.MODE_PRIVATE).edit()
+        prefs.putString("email",email)
+        prefs.putString("provider", provider)
+        prefs.apply()
+
     }
 
     private fun setUp(email: String, provider: String) {
@@ -31,6 +37,10 @@ class HomeActivity : AppCompatActivity() {
         password.text = provider
 
         button2.setOnClickListener {
+
+            val prefs = getSharedPreferences(getString(R.string.pref_file), Context.MODE_PRIVATE).edit()
+            prefs.clear()
+            prefs.apply()
 
             FirebaseAuth.getInstance().signOut()
             onBackPressed()

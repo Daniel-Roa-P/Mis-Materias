@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mis Materias</string>
+    <string name="pref_file">mi.aplicacion.MisMaterias.PREFERENCE_FILE_KEY</string>
 </resources>
