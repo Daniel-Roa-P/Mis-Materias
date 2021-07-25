@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,9 +12,9 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
-        app:layout_constraintBottom_toTopOf="@id/constEdit"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread_inside">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/toolbar_title"
@@ -31,8 +30,8 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="right"
-            android:visibility="invisible"
-            android:background="@drawable/ic_baseline_settings_24" />
+            android:background="@drawable/ic_baseline_settings_24"
+            android:visibility="invisible" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -41,7 +40,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/constButton"
-        app:layout_constraintTop_toBottomOf="@id/toolbarMain">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <EditText
             android:id="@+id/etCorreoAuth"
@@ -75,37 +77,59 @@
         android:id="@+id/constButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@id/googleButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constEdit">
 
         <Button
             android:id="@+id/loginButton"
-            android:layout_width="match_parent"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@color/registerButton"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/login_button_style"
             android:fontFamily="sans-serif-black"
             android:text="Ingresar"
-            app:layout_constraintBottom_toTopOf="@id/registerButton"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/registerButton"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"></Button>
 
         <Button
             android:id="@+id/registerButton"
-            android:layout_width="match_parent"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@color/registerButton"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/login_button_style"
             android:fontFamily="sans-serif-black"
             android:text="Registrarse"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/loginButton"></Button>
+            app:layout_constraintStart_toEndOf="@id/loginButton"
+            app:layout_constraintTop_toTopOf="parent"></Button>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/googleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/google_button_style"
+        android:drawableStart="@drawable/ic_buscar"
+        android:drawablePadding="-50sp"
+        android:fontFamily="sans-serif-black"
+        android:paddingStart="50sp"
+        android:text="Ingresar con cuenta de Google"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constButton"></Button>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
